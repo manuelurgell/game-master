@@ -8,16 +8,6 @@ This API is a simple RESTful service that allows to interact with servers and pl
   - [Run project](#run-project)
   - [API documentation](#api-documentation)
   - [Additional configuration](#additional-configuration)
-- [Development](#development)
-  - [Install project](#install-project-1)
-  - [Clone from GitLab](#clone-from-gitlab-1)
-  - [Environment](#environment-1)
-  - [Run project](#run-project-1)
-  - [Models](#models)
-  - [Developing](#developing)
-  - [Unit tests](#unit-tests)
-  - [API documentation](#api-documentation-1)
-  - [Additional configuration](#additional-configuration-1)
 ***
 ## Review project
 
