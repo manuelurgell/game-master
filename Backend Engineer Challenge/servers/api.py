@@ -35,12 +35,12 @@ class MatchViewSet(mixins.CreateModelMixin,
     serializer_class = serializers.PlayerSerializer
 
     def get_queryset(self):
-        region_name = self.request.query_params.get('region_name', None)
+        location = self.request.query_params.get('location', None)
 
-        if not region_name:
+        if not location:
             return []
-
-        queryset = Player.objects.filter(region_name=region_name)
+        server = Server.objects.filter(location=location).first()
+        queryset = Player.objects.filter(location=location)[:server.capacity]
         
         return queryset
 
