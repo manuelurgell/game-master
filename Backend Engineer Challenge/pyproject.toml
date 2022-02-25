@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "django-rest-example"
+version = "0.1.0"
+description = "Django REST API example"
+authors = ["Manuel Urgell <manuel.urgell@unosquare.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Django = "^3.2.9"
+django-cors-headers = "^3.10.0"
+djangorestframework = "^3.12.4"
+djangorestframework-simplejwt = "^5.0.0"
+psycopg2 = "^2.9.1"
+uWSGI = "^2.0.20"
+
+[tool.poetry.dev-dependencies]
+black = "^21.10b0"
+django-extensions = "^3.1.5"
+isort = {version = "^5.10.1", extras = ["pyproject"]}
+flake8 = "^4.0.1"
+flake8-import-order = "^0.18.1"
+mypy = "^0.910"
+pre-commit = "^2.15.0"
+pytest = "^6.2.5"
+tox = "^3.24.4"
+Werkzeug = "^2.0.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

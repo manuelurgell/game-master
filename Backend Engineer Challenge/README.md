@@ -1,22 +1,68 @@
-# Tech Challenge for Backend Engineer
+## Overview
+This API is a simple RESTful service that allows to interact with servers and players.
+***
+## Index
+- [Review project](#review-project)
+  - [Install project](#install-project)
+  - [Environment](#environment)
+  - [Run project](#run-project)
+  - [API documentation](#api-documentation)
+  - [Additional configuration](#additional-configuration)
+- [Development](#development)
+  - [Install project](#install-project-1)
+  - [Clone from GitLab](#clone-from-gitlab-1)
+  - [Environment](#environment-1)
+  - [Run project](#run-project-1)
+  - [Models](#models)
+  - [Developing](#developing)
+  - [Unit tests](#unit-tests)
+  - [API documentation](#api-documentation-1)
+  - [Additional configuration](#additional-configuration-1)
+***
+## Review project
 
-For this challenge you will need to code a match-making application. The application will receive both a file containing the list of servers available and a file containing the the list of players. The application should calculate the best match-making based on server capacity and latency.
+### Install project
+- Prerequisites:
+  - docker (20.1.8 recommended)
+  - docker-compose (1.29.2 recommended)
+- Ports:
+  - The backend api runs on port `8000` by default.
+  - The local database for reviewing runs on port `5432` by default.
 
-### Requirements
-- Players can be banned from specific servers
-- Players can ban other users
-- Matchmaking must never add players to a server where they are banned
-- Matchmaking must never add two players to the same server if either one of them previously banned the other
 
-### Nice to have
-- Give a preference to putting the player and server in the same region since latency will be reduced
+### Environment
+- Create a .env file with the following contents (defaults are given, feel free to change them):
+  ```
+  POSTGRES_DB=test
+  POSTGRES_USER=postgres
+  POSTGRES_PASSWORD=postgres
+  POSTGRES_HOST=database
+  ```
+- You are also able to change the ports for the database and backend containers by adding and changing the following variables:
+  ```
+  POSTGRES_PORT=5432
+  BACKEND_PORT=8000
+  BACKEND_STATIC_PORT=8001
+  ```
 
-### Input & Output
-You will receive the available servers and the list of players in two files. Check this directory to see the example inputs.
+### Run project
+- Run with docker-compose:
+  ```
+  docker-compose build
+  docker-compose up
+  ```
 
-The output should be a set of files (one per server) containing the list of players each server will host. See the example_output.csv file.
+### API documentation
+- **Under development...**
 
-### Bonus points
-- A post request can me made to add servers or players
-- Data is dumped to a database after processing the files
-- Metrics are provided (players per region, number of servers or other)
+### Additional configuration
+
+- You can create a volume for the whole backend application by adding the following variables:
+  ```
+  APP_LOCAL_VOLUME=/.docker_volumes/backend
+  APP_CONTAINER_VOLUME=/app
+  ```
+- You can set the secret key of the backend app using the following variable:
+  ```
+  SECRET_KEY
+  ```
